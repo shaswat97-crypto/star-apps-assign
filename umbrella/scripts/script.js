@@ -64,7 +64,7 @@ buttons.forEach((button) => {
     umbImage.style.display = "none";
     umbImage.src = button.getAttribute("source");
     umbSpinner.style.display = "block";
-    logoCont.style.display = "none";
+    // logoCont.style.display = "none";
     uploadButtonSpinner.style.display = "flex";
     uploadButtonImg.style.display = "none";
 
@@ -72,7 +72,7 @@ buttons.forEach((button) => {
     setTimeout(() => {
       umbImage.style.display = "flex";
       umbSpinner.style.display = "none";
-      logoCont.style.display = "flex";
+      // logoCont.style.display = "flex";
       uploadButtonSpinner.style.display = "none";
       uploadButtonImg.style.display = "flex";
     }, 1000);
