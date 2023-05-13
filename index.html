@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Apps Assignment</title>
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <div class="col">
+          <div class="umbrella-holder">
+            <img
+              class="umbrella-holder-img"
+              src="./assets/umbrella-blue.png"
+              alt="Umbrella Preview"
+            />
+            <div
+              id="umbrella-holder-spinner"
+              class="spinner"
+              style="display: none"
+            >
+              <img
+                class="loaderimg"
+                src="./assets/loader_icon.svg"
+                alt="Loading..."
+              />
+            </div>
+            <div class="logo-cont">
+              <div class="logo-holder">
+                <img id="logo-holder-image" src="#" alt="Logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h1 class="header">Custom Umbrella</h1>
+          <div class="color-buttons">
+            <button
+              class="color-buttons-button"
+              color="#a12664"
+              source="./assets/umbrella-pink.png"
+              style="background-color: #ff69b4; margin-left: 0"
+              mcolor="#ff69b4"
+              bcolor="#f7cbe17e"
+              deg="280deg"
+            ></button>
+            <button
+              class="color-buttons-button"
+              color="#226380"
+              source="./assets/umbrella-blue.png"
+              style="background-color: #39bdf6"
+              mcolor="#39bdf6"
+              bcolor="#e1f5f9"
+              deg="150deg"
+            ></button>
+            <button
+              class="color-buttons-button"
+              color="#a58c27"
+              source="./assets/umbrella-yello.png"
+              style="background-color: #ffcc00"
+              mcolor="#ffcc00"
+              bcolor="#ffcc001a"
+              deg="330deg"
+            ></button>
+          </div>
+          <h1>Customize your umbrella</h1>
+          <h2>Upload a logo for an instant preview.</h2>
+          <p>.png and .jpg files only. Max file size is 5MB.</p>
+
+          <div class="xcont">
+            <div style="flex: 1">
+              <input
+                type="file"
+                id="upload-button-input"
+                accept="image/*"
+                hidden
+              />
+              <label for="upload-button-input">
+                <div
+                  class="upload-button"
+                  id="upload-button"
+                  style="background-color: #39bdf6"
+                >
+                  <div class="upload-button-img">
+                    <img
+                      id="upload-icon"
+                      alt="upload icon"
+                      src="./assets/upload_icon.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="upload-button-spinner">
+                    <img
+                      class="loaderimg"
+                      src="./assets/loader_icon.svg"
+                      alt="Loading..."
+                    />
+                  </div>
+                  <span id="upload-button-label">UPLOAD LOGO</span>
+                </div>
+              </label>
+            </div>
+            <div class="x">X</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
