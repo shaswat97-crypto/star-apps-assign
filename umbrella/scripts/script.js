@@ -6,6 +6,7 @@ const logoCont = document.querySelector(".logo-cont");
 const span = document.querySelector("span");
 const buttons = document.querySelectorAll(".color-buttons-button");
 const umbImage = document.querySelector(".umbrella-holder-img");
+const umbCont = document.querySelector(".umbrella-holder");
 const umbSpinner = document.querySelector("#umbrella-holder-spinner");
 const uploadButton = document.querySelector(".upload-button");
 const loaderimg = document.querySelector(".loaderimg");
@@ -61,18 +62,16 @@ buttons.forEach((button) => {
 
     //add a border to the selected button and start the animation
     button.style.border = `3px solid ${button.getAttribute("color")}`;
-    umbImage.style.display = "none";
+    umbCont.style.display = "none";
     umbImage.src = button.getAttribute("source");
     umbSpinner.style.display = "block";
-    // logoCont.style.display = "none";
     uploadButtonSpinner.style.display = "flex";
     uploadButtonImg.style.display = "none";
 
     //stop the animation once the new color umbrella is loaded
     setTimeout(() => {
-      umbImage.style.display = "flex";
+      umbCont.style.display = "flex";
       umbSpinner.style.display = "none";
-      // logoCont.style.display = "flex";
       uploadButtonSpinner.style.display = "none";
       uploadButtonImg.style.display = "flex";
     }, 1000);
@@ -85,5 +84,5 @@ x.addEventListener("click", () => {
   x.style.display = "none";
   logoCont.style.display = "none";
   span.innerText = "UPLOAD LOGO";
-  fileInput.value = '';
+  fileInput.value = "";
 });
