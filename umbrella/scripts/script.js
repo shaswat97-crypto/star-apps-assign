@@ -12,17 +12,20 @@ const loaderimg = document.querySelector(".loaderimg");
 const uploadButtonSpinner = document.querySelector(".upload-button-spinner");
 const uploadButtonImg = document.querySelector(".upload-button-img");
 
+//add a listener on the upload button, so that whenever the image changes, the colors and animations show
 fileInput.addEventListener("change", (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onload = () => {
+    //show the spinner, while the image loads
     umbImage.style.display = "none";
     umbSpinner.style.display = "block";
     logoCont.style.display = "none";
     uploadButtonSpinner.style.display = "flex";
     uploadButtonImg.style.display = "none";
 
+    //hide the animation, once the image has loaded
     setTimeout(() => {
       umbImage.style.display = "flex";
       umbSpinner.style.display = "none";
@@ -32,11 +35,13 @@ fileInput.addEventListener("change", (event) => {
       uploadedImage.src = reader.result;
     }, 1000);
   };
+
   span.innerText = file.name;
   x.style.display = "flex";
   logoCont.style.display = "flex";
 });
 
+//add a listener to each of the coloured buttons, so that we can change the colors and show the animations
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     console.log("sd");
@@ -44,6 +49,7 @@ buttons.forEach((button) => {
       btn.style.border = "none";
     });
 
+    //change the background color, upload button color and the animation color
     uploadButton.style.backgroundColor = button.getAttribute("mcolor");
     x.style.backgroundColor = button.getAttribute("mcolor");
     main.style.backgroundColor = button.getAttribute("bcolor");
@@ -53,6 +59,7 @@ buttons.forEach((button) => {
       button.getAttribute("deg")
     );
 
+    //add a border to the selected button and start the animation
     button.style.border = `3px solid ${button.getAttribute("color")}`;
     umbImage.style.display = "none";
     umbImage.src = button.getAttribute("source");
@@ -61,6 +68,7 @@ buttons.forEach((button) => {
     uploadButtonSpinner.style.display = "flex";
     uploadButtonImg.style.display = "none";
 
+    //stop the animation once the new color umbrella is loaded
     setTimeout(() => {
       umbImage.style.display = "flex";
       umbSpinner.style.display = "none";
@@ -71,7 +79,9 @@ buttons.forEach((button) => {
   });
 });
 
+//add a listener to the cross button, to remove the logo
 x.addEventListener("click", () => {
+  //remove the logo and clear the input field value
   x.style.display = "none";
   logoCont.style.display = "none";
   span.innerText = "UPLOAD LOGO";
